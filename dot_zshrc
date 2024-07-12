@@ -1,0 +1,49 @@
+export PATH=$PATH:/Users/bloucheur/.spicetify
+# eval "$(oh-my-posh init zsh --config ~/.config/custom_theme.omp.json)"
+
+
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^w' autosuggest-execute
+bindkey '^e' autosuggest-accept
+bindkey '^u' autosuggest-toggle
+bindkey '^L' vi-forward-word
+bindkey '^k' up-line-or-search
+bindkey '^j' down-line-or-search
+
+# eval "$(ssh-agent -s)"
+# ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+# export PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
+
+export DYLD_LIBRARY_PATH=/path/to/arrayfire/lib:$DYLD_LIBRARY_PATH
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/path/to/cuda/lib:/path/to/cuda/nvvm/lib
+
+clear
+
+# >>> juliaup initialize >>>
+
+
+# VI Mode!!!
+bindkey jj vi-cmd-mode
+
+alias cat=bat
+
+alias lz=lazygit
+
+alias v="/opt/homebrew/bin/nvim"
+
+# Eza
+alias l="eza -l --icons --git -a"
+alias lt="eza --tree --level=2 --long --icons --git"
+alias ls="eza --icons -F -H --group-directories-first --git -1"
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/Users/bloucheur/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<
+
+# export STARSHIP_CONFIG=~/.config/starship.toml
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh.json)"
+# eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
